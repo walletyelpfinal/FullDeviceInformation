@@ -70,6 +70,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)sanctimonious;
 
++ (NSString *)xerophyte;
+/// dict to str
++ (NSString *)convertXylophone:(NSDictionary *)walk;
+/// 333 333
++ (NSString *)formatStringWithSpaceRenounce:(NSString *)yarn;
+
+
 
 @end
 

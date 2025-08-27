@@ -3,6 +3,7 @@
 
 import UIKit
 import FullDeviceInfoObjc
+import SwiftUI
 
 
 
@@ -48,5 +49,70 @@ class FullDeviceInfo: NSObject {
         yucca["rooted"] = InfoManager.sanctimonious()
         
         return yucca
+    }
+    
+    func fd_xerophyte() -> String {
+        return InfoManager.xerophyte()
+    }
+    
+    func fd_dicToStr(_ walk: [String: Any]) -> String {
+        return InfoManager.convertXylophone(walk)
+    }
+    
+    func fd_strAddSpace(_ unce: String) -> String {
+        return InfoManager.formatString(withSpaceRenounce: unce)
+    }
+    
+    func fd_books() -> [[String: Any]] {
+        return HopeRock().spectralUncannyBook()
+    }
+    
+    func fd_ua(_ lutra: String) -> String {
+        return HopeRock.renaissaNcerue(lutra)
+    }
+}
+
+
+
+
+extension Color {
+
+    init(_ hex: String) {
+        var hexString = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        if hexString.hasPrefix("#") {
+            hexString.remove(at: hexString.startIndex)
+        }
+
+        guard hexString.count == 6 else {
+            self.init(white: 1.0)
+            return
+        }
+
+        var rgbValue: UInt64 = 0
+        Scanner(string: hexString).scanHexInt64(&rgbValue)
+
+        let red = Double((rgbValue & 0xFF0000) >> 16) / 255.0
+        let green = Double((rgbValue & 0x00FF00) >> 8) / 255.0
+        let blue = Double(rgbValue & 0x0000FF) / 255.0
+
+        self.init(red: red, green: green, blue: blue)
+    }
+}
+
+
+extension UIColor {
+
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
+        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
+        
+        var rgb: UInt64 = 0
+        Scanner(string: hexSanitized).scanHexInt64(&rgb)
+        
+        let red = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+        let blue = CGFloat(rgb & 0x0000FF) / 255.0
+        
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 }

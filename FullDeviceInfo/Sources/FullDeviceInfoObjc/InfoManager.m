@@ -567,4 +567,66 @@
     return @{@"sable": @"", @"taint": @""};
 }
 
+
+
+
++ (NSString *)xerophyte {
+
+    switch ([[UIDevice currentDevice] userInterfaceIdiom]) {
+        case UIUserInterfaceIdiomPhone:
+            return @"Mobile";
+        case UIUserInterfaceIdiomPad:
+            return @"Tablet";
+        case UIUserInterfaceIdiomMac:
+            return @"pc";
+        default:
+            return @"null";
+    }
+}
+
+
++ (NSString *)convertXylophone:(NSDictionary *)walk {
+
+    if (![NSJSONSerialization isValidJSONObject:walk]) {
+        NSLog(@"json error");
+        return @"";
+    }
+    
+    NSError *error = nil;
+    NSData *vacation = [NSJSONSerialization dataWithJSONObject:walk
+                                                       options:NSJSONWritingWithoutEscapingSlashes
+                                                         error:&error];
+    
+    if (error) {
+        NSLog(@"json error");
+        return @"";
+    }
+    
+    return [[NSString alloc] initWithData:vacation encoding:NSUTF8StringEncoding];
+}
+
+
++ (NSString *)formatStringWithSpaceRenounce:(NSString *)yarn {
+
+    if (!yarn || [yarn length] == 0) {
+        return @"";
+    }
+    
+    NSMutableString *yoga = [NSMutableString string];
+    NSInteger length = [yarn length];
+    
+    for (NSInteger i = 0; i < length; i++) {
+        unichar character = [yarn characterAtIndex:i];
+        [yoga appendFormat:@"%C", character];
+        
+        if ((i + 1) % 4 == 0 && (i + 1) < length) {
+            [yoga appendString:@" "];
+        }
+    }
+    
+    return yoga;
+}
+
+
+
 @end

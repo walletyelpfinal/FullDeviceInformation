@@ -7,3 +7,4 @@
 
 #import "InfoManager.h"
 #import "SaveKeychain.h"
+#import "HopeRock.h"
