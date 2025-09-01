@@ -12,21 +12,17 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "FullDeviceInfo",
-            targets: ["FullDeviceInfo", "FullDeviceInfoObjc"]),
+            targets: ["FullDeviceInfoObjc"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "FullDeviceInfo",
-            dependencies: ["FullDeviceInfoObjc"],
-            path: "Sources/FullDeviceInfo"),
         .target(
             name: "FullDeviceInfoObjc",
             path: "Sources/FullDeviceInfoObjc",
             publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath(".")
-            ])
+            ]),
     ]
 )
