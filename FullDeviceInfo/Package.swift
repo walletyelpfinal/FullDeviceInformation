@@ -4,14 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "FullDeviceInfo",
+    name: "FullDevicelnformation",
     platforms: [
         .iOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "FullDeviceInfo",
+            name: "FullDevicelnformation",
             targets: ["FullDeviceInfoObjc"]),
     ],
     targets: [
